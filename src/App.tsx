@@ -1,24 +1,65 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Greet from './components/Greet';
+import Oscar from './components/Oscar';
+import Button from './components/Button';
+import User from './components/User';
 
 function App() {
+
+  const nameList = [
+    {
+      first: 'Bravo',
+      last: 'sonic'
+    },
+    {
+      first: 'Bravo',
+      last: 'sonic'
+    },
+    {
+      first: 'Bravo',
+      last: 'sonic'
+    },
+    {
+      first: 'Bravo',
+      last: 'sonic'
+    },
+    {
+      first: 'Bravo',
+      last: 'sonic'
+    },
+  ]
+
+  const handleClick=(e:React.MouseEvent<HTMLButtonElement>)=>{
+    console.log(e)
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+
+      <Greet
+        name='Ibrahim'
+        message={10}
+        nameList={nameList}
+      />
+      <Oscar
+      name='Kholil'
+      age={20}
+      >
+        <h1>Hello there i am </h1>
+
+      </Oscar>
+      <Button
+      handleClick={handleClick}
+      />
+
+    <User
+    style={{color:'red',padding:'10px'}}
+    />
+
+
+
     </div>
   );
 }
